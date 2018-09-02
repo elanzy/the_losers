@@ -7,21 +7,29 @@
 
   this.addLoser = function () {
     let addBtn = document.querySelector("#add_loser")
-    let loserValue = document.querySelector("#loser_value");
 
-    function addTheLoser() {
-      let input = loserValue.value;
-      loserValue.value = "";
-      losers.push(input);
-      this.loserList();
+    function addTheLoser(theLoser) {
+      let value = theLoser.value;
+      theLoser.value = "";
+
+      if (value === '') {
+        console.log("empty")
+      } else if (losers.indexOf(value) !== -1) {
+        console.log("taken")
+      } else {
+        losers.push(value);
+        this.losersList();
+        console.log(losers);
+      }
     }
 
     addBtn.addEventListener("click", function (e) {
-      addTheLoser();
+    let inputLoser = document.querySelector("#loser_value");
+      addTheLoser(inputLoser);
     })
   }
 
-  this.loserList = function () {
+  this.losersList = function () {
     let loserWrapper = document.querySelector(".loser_list_wrapper")
     let template = "";
 
