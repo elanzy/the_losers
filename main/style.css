@@ -60,3 +60,19 @@ input:focus {
   background: #4d4d4d;
   color: #ccc;
 }
+
+.loser_list_wrapper {
+  height: 26px;
+}
+
+.loser_name {
+  background: steelblue;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+.loser_name:hover {
+  background: tomato;
+  cursor: pointer;
+}

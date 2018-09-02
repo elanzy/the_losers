@@ -26,7 +26,7 @@
     let template = "";
 
     for (loser of losers) {
-      template += `<span class="loser-name" data-id="">${loser}</span>`
+      template += `<span class="loser_name" data-id="">${loser}</span>`
     }
 
     loserWrapper.innerHTML = "";
