@@ -9,7 +9,8 @@
     let addBtn = document.querySelector("#add_loser")
 
     function addTheLoser(theLoser) {
-      let value = theLoser.value;
+      let input = theLoser.value.toLowerCase();
+      let value = input.charAt(0).toUpperCase() + input.substr(1);
       theLoser.value = "";
 
       if (value === '') {
