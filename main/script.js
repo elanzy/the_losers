@@ -3,6 +3,7 @@
 
   this.init = function () {
     this.addLoser();
+    this.showTheLoser();
   }
 
   this.addLoser = function () {
@@ -47,7 +48,6 @@
 
     function deleteSelectedLoser(selected) {
       let selectedUser = selected.getAttribute("data-id");
-      console.log(selectedUser)
       losers.splice(selectedUser, 1);
       this.losersList();
     }
@@ -57,6 +57,24 @@
         deleteSelectedLoser(this)
       })
     }
+  }
+
+  this.showTheLoser = function () {
+    let showTheLoserBtn = document.querySelector("#show_results");
+    let loserContainer = document.querySelector(".loser_container");
+    let resultsContainer = document.querySelector(".results_container");
+
+    function showLoserResult() {
+      let resultWrapper = document.querySelector(".result");
+      let randomLoser = losers[Math.floor(Math.random() * losers.length)]
+      resultWrapper.innerHTML =`<span>${randomLoser}</span>`;
+    }
+
+    showTheLoserBtn.addEventListener("click", function () {
+      loserContainer.classList.add("hidden");
+      resultsContainer.classList.remove("hidden");
+      showLoserResult();
+    })
   }
 
   this.init();

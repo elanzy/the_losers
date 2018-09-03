@@ -2,8 +2,13 @@
   display: none;
 }
 
-.loser_container {
+.loser_container,
+.results_container {
   margin: auto;
+}
+
+.results_action {
+  text-align: center;
 }
 
 .loser_input span {
@@ -63,6 +68,15 @@ input:focus {
 
 .loser_list_wrapper {
   height: 26px;
+}
+
+.result {
+  text-align: center;
+  height: 30px;
+  background: steelblue;
+  color: snow;
+  border-radius: 4px;
+  line-height: 1.7;
 }
 
 .loser_name {
