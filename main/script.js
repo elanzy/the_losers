@@ -71,9 +71,13 @@
     }
 
     showTheLoserBtn.addEventListener("click", function () {
-      loserContainer.classList.add("hidden");
-      resultsContainer.classList.remove("hidden");
-      showLoserResult();
+      if (losers.length > 1) {
+        loserContainer.classList.add("hidden");
+        resultsContainer.classList.remove("hidden");
+        showLoserResult();
+      } else {
+        console.log("Losers list has less than or equal to one entry")
+      }
     })
   }
 
