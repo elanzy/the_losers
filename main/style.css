@@ -90,3 +90,13 @@ input:focus {
   background: tomato;
   cursor: pointer;
 }
+
+.run_again,
+.start_again {
+  cursor: pointer;
+}
+
+.run_again:hover,
+.start_again:hover {
+  color: tomato;
+}

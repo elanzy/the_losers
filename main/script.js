@@ -4,6 +4,7 @@
   this.init = function () {
     this.addLoser();
     this.showTheLoser();
+    this.runAgain();
   }
 
   this.addLoser = function () {
@@ -59,16 +60,16 @@
     }
   }
 
+  this.showLoserResult = function () {
+    let resultWrapper = document.querySelector(".result");
+    let randomLoser = losers[Math.floor(Math.random() * losers.length)]
+    resultWrapper.innerHTML =`<span>${randomLoser}</span>`;
+  }
+
   this.showTheLoser = function () {
     let showTheLoserBtn = document.querySelector("#show_results");
     let loserContainer = document.querySelector(".loser_container");
     let resultsContainer = document.querySelector(".results_container");
-
-    function showLoserResult() {
-      let resultWrapper = document.querySelector(".result");
-      let randomLoser = losers[Math.floor(Math.random() * losers.length)]
-      resultWrapper.innerHTML =`<span>${randomLoser}</span>`;
-    }
 
     showTheLoserBtn.addEventListener("click", function () {
       if (losers.length > 1) {
@@ -78,6 +79,14 @@
       } else {
         console.log("Losers list has less than or equal to one entry")
       }
+    })
+  }
+
+  this.runAgain = function () {
+    let runAgainBtn = document.querySelector(".run_again")
+
+    runAgainBtn.addEventListener("click", function () {
+      showLoserResult();
     })
   }
 
